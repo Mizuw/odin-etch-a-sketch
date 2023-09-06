@@ -1,3 +1,4 @@
-# Etch A Sketch
+# Etch A Sketch (Odin)
 
-My Version of the [Etch a Sketch Project for The Odin Project](https://www.theodinproject.com/lessons/foundations-etch-a-sketch). It took a bit of time, but i'm pretty satisfied with the end Result. 
+
+![Screenshot](https://raw.githubusercontent.com/Mizuw/odin-etch-a-sketch/main/assets/README/screenshot.png?token=GHSAT0AAAAAACCB2HDVKK2OMXDFAL4JJJUYZHYZ7LA)
