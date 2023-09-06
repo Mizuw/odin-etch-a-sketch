@@ -10,10 +10,10 @@ slider.oninput = resizeGrid; // the grid will reload after the slider moves
 ParaSlider.textContent = slider.value + " x " + slider.value;
 
 function createGrid() {
-    grid.style.gridTemplateColumns = `repeat(${size}, 1fr)` // this code makes it 
-    grid.style.gridTemplateRows =  `repeat(${size}, 1fr)`
+    grid.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
+    grid.style.gridTemplateRows =  `repeat(${size}, 1fr)`;
 
-    for (let i = 0; i < size * size; i++) {
+    for (let i = 0; i < size * size; i++) { // creates the div's based on the slider's size (default: 16)
         const gridElement = document.createElement('div');
         gridElement.classList.add('GridElement');
 
@@ -27,7 +27,7 @@ function createGrid() {
             } else if (currentMode === "colorMode") {
                 e.target.style.backgroundColor = UserColor.value;
             } else if (currentMode === "eraserMode") {
-                e.target.style.backgroundColor = "#e0e0e0"
+                e.target.style.backgroundColor = "#e0e0e0";
             }
         })
         grid.appendChild(gridElement);
@@ -47,7 +47,7 @@ function clearGrid() {
 
 function selectMode() {
         if (this.document.activeElement.classList.contains("activeButton")) {
-            this.document.activeElement.classList.remove("activeButton")
+            this.document.activeElement.classList.remove("activeButton");
             currentMode = "";
         } else {
             for (let i = 0; i < 3; i++) { // loops throug the array, which are the buttons
@@ -57,4 +57,4 @@ function selectMode() {
             this.document.activeElement.classList.add("activeButton");
         }
     }
-window.onload = createGrid() // creates a grid after the page was loaded
+window.onload = createGrid(); // creates a grid after the page was loaded
