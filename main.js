@@ -3,7 +3,7 @@ const slider = document.getElementById("SliderElement");
 const ParaSlider = document.getElementById("ParaSlider");
 const UserColor = document.getElementById("UserColor");
 
-let currentMode = "colorMode";
+let currentMode;
 let size = slider.value; // the size of the grid is defined by the slider
 
 slider.oninput = resizeGrid; // the grid will reload after the slider moves
@@ -46,8 +46,15 @@ function clearGrid() {
 }
 
 function selectMode() {
-    if (this.document.activeElement.getAttribute("id") == "rainbowMode" || "eraserMode" || "colorMode") {
-        currentMode = this.document.activeElement.getAttribute("id"); // gets the ID of the buttons
+        if (this.document.activeElement.classList.contains("activeButton")) {
+            this.document.activeElement.classList.remove("activeButton")
+            currentMode = "";
+        } else {
+            for (let i = 0; i < 3; i++) {
+                document.querySelectorAll("button")[i].classList.remove("activeButton");
+            }
+            currentMode = this.document.activeElement.getAttribute("id"); // gets the ID of the buttons
+            this.document.activeElement.classList.add("activeButton");
+        }
     }
-}
 window.onload = createGrid() // creates a grid after the page was loaded

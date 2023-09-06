@@ -43,6 +43,10 @@ button {
     background-color: rgba(237, 77, 77, 0.596);
 }
 
-.colorMode:hover, .eraserMode:hover, .rainbowMode:hover {
+.colorMode:hover, .eraserMode:hover, .rainbowMode:hover, .activeButton {
     background-color: rgba(101, 77, 237, 0.5);
+}
+
+.activeButton {
+    background-color: rgba(101, 77, 237, 0.9);
 }
