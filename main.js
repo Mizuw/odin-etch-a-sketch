@@ -3,10 +3,7 @@ const slider = document.getElementById("SliderElement");
 const ParaSlider = document.getElementById("ParaSlider");
 const UserColor = document.getElementById("UserColor");
 
-const DEFAULT_COLOR = '#000000';
-
 let size = slider.value;
-currentColor = DEFAULT_COLOR;
 
 slider.oninput = resizeGrid;
 ParaSlider.textContent = "Grid Size: " + slider.value;
