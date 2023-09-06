@@ -1,15 +1,15 @@
 const grid = document.getElementById("grid");
 const slider = document.getElementById("SliderElement");
 const ParaSlider = document.getElementById("ParaSlider");
+const UserColor = document.getElementById("UserColor");
 
-const DEFAULT_SIZE = slider.value;
 const DEFAULT_COLOR = '#000000';
 
-let size = DEFAULT_SIZE;
+let size = slider.value;
 currentColor = DEFAULT_COLOR;
 
 slider.oninput = resizeGrid;
-ParaSlider.innerHTML = slider.value;
+ParaSlider.textContent = "Grid Size: " + slider.value;
 
 function createGrid() {
     grid.style.gridTemplateColumns = `repeat(${size}, 1fr)`
@@ -19,14 +19,14 @@ function createGrid() {
         const gridElement = document.createElement('div');
         gridElement.classList.add('GridElement');
         gridElement.addEventListener("mouseenter", function(e) {
-            e.target.style.backgroundColor = currentColor
+            e.target.style.backgroundColor = UserColor.value;
         })
         grid.appendChild(gridElement);
     }
 }
 
 function resizeGrid() {
-    ParaSlider.innerHTML = this.value;
+    ParaSlider.textContent = "Grid Size: " + this.value;
     size = this.value;
     clearGrid();
 }
