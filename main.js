@@ -3,6 +3,7 @@ const slider = document.getElementById("SliderElement");
 const ParaSlider = document.getElementById("ParaSlider");
 const UserColor = document.getElementById("UserColor");
 
+let currentMode = "colorMode";
 let size = slider.value;
 
 slider.oninput = resizeGrid;
@@ -16,7 +17,16 @@ function createGrid() {
         const gridElement = document.createElement('div');
         gridElement.classList.add('GridElement');
         gridElement.addEventListener("mouseenter", function(e) {
-            e.target.style.backgroundColor = UserColor.value;
+            if (currentMode == "rainbowMode") {
+                const RGBred = Math.floor(Math.random() * 255) + 1; 
+                const RGBgreen = Math.floor(Math.random() * 255) + 1; 
+                const RGByellow = Math.floor(Math.random() * 255) + 1; 
+                e.target.style.backgroundColor = `rgb(${RGBred}, ${RGBgreen}, ${RGByellow})`;
+            } else if (currentMode === "colorMode") {
+                e.target.style.backgroundColor = UserColor.value;
+            } else if (currentMode === "eraserMode") {
+                e.target.style.backgroundColor = "#e0e0e0"
+            }
         })
         grid.appendChild(gridElement);
     }
@@ -31,6 +41,12 @@ function resizeGrid() {
 function clearGrid() {
     grid.innerHTML = "";
     createGrid();
+}
+
+function selectMode() {
+    if (this.document.activeElement.getAttribute("id") == "rainbowMode" || "eraserMode" || "colorMode") {
+        currentMode = this.document.activeElement.getAttribute("id")
+    }
 }
 
 window.onload = createGrid()
