@@ -1,15 +1,48 @@
 body {
     text-align: center;
     font-family: 'Roboto', arial;
+    background-color: #e0e0e0;
 }
 
+h1 {
+    font-size: 50px;
+}
 
 .grid {
     display: grid;
     margin: 0 auto;
     width: 500px;
     height: 500px;
+    border-radius: 5px;
     background: #e0e0e0;
     box-shadow:  20px 20px 60px #bebebe,
                  -20px -20px 60px #ffffff;
   }
+
+.toolbar {
+    margin: 0 auto;
+    width:  fit-content;
+    padding: 10px;
+    border-radius: 50px;
+}
+
+.UserColor {
+    border: none;
+    background-color: rgba(100,77,237,0.08);
+}
+
+button {
+    padding: 1em;
+    border: 0px solid transparent;
+    background-color: rgba(100,77,237,0.08);
+    border-radius: 1.25em;
+    transition: all 0.2s linear;
+   }
+
+ .clear:hover {
+    background-color: rgba(237, 77, 77, 0.596);
+}
+
+.colorMode:hover, .eraserMode:hover, .rainbowMode:hover {
+    background-color: rgba(101, 77, 237, 0.5);
+}

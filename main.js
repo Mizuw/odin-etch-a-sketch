@@ -7,7 +7,7 @@ let currentMode = "colorMode";
 let size = slider.value;
 
 slider.oninput = resizeGrid;
-ParaSlider.textContent = "Grid Size: " + slider.value;
+ParaSlider.textContent = slider.value + " x " + slider.value;
 
 function createGrid() {
     grid.style.gridTemplateColumns = `repeat(${size}, 1fr)`
@@ -33,7 +33,7 @@ function createGrid() {
 }
 
 function resizeGrid() {
-    ParaSlider.textContent = "Grid Size: " + this.value;
+    ParaSlider.textContent = this.value + " x " + this.value;
     size = this.value;
     clearGrid();
 }
@@ -45,7 +45,7 @@ function clearGrid() {
 
 function selectMode() {
     if (this.document.activeElement.getAttribute("id") == "rainbowMode" || "eraserMode" || "colorMode") {
-        currentMode = this.document.activeElement.getAttribute("id")
+        currentMode = this.document.activeElement.getAttribute("id");
     }
 }
 

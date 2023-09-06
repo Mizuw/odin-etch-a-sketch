@@ -10,21 +10,20 @@
 </head>
 <body>
     <div id="container">
-        <h1 class="Title" id="tite">Odin - Etch a Sketch</h1>
+        <h1 class="Title" id="title">Etch a Sketch</h1>
         <div id="grid" class="grid"></div>
-        <div class="slider" id="slider">
-            <input type="range" min="1" max="100" value="16" class="SliderElement" id="SliderElement">
-            <p id="ParaSlider" class="ParaSlider"></p>
         </div>
         <div class="toolbar" id="toolbar">
-            <button onclick="clearGrid()" class="clear" id="clear">clear</button>
-            <div class="colors" id="colors">
-                <input type="color" id="UserColor" class="UserColor">
-                <button class="colorMode" id="colorMode" onclick="selectMode()"><i class="fa-solid fa-brush"></i></button>
-                <button class="rainbowMode" id="rainbowMode" onclick="selectMode()"><i class="fa-solid fa-rainbow"></i></button>
-                <button class="eraserMode" id="eraserMode" onclick="selectMode()"><i class="fa-solid fa-eraser"></i></button>
-            </div>
+            <div class="slider" id="slider">
+            <input type="range" min="1" max="100" value="16" class="SliderElement" id="SliderElement">
+            <p id="ParaSlider" class="ParaSlider"></p>
+            <button class="colorMode" id="colorMode" onclick="selectMode()"><i class="fa-solid fa-brush"></i></button>
+            <button class="rainbowMode" id="rainbowMode" onclick="selectMode()"><i class="fa-solid fa-rainbow"></i></button>
+            <button class="eraserMode" id="eraserMode" onclick="selectMode()"><i class="fa-solid fa-eraser"></i></button>
+            <button onclick="clearGrid()" class="clear" id="clear"><i class="fa-solid fa-trash"></i></button>
         </div>
+        <br>
+        <input type="color" id="UserColor" class="UserColor">
     </div>
     <script src="main.js" defer></script>
 </body>
