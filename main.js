@@ -50,10 +50,10 @@ function selectMode() {
             this.document.activeElement.classList.remove("activeButton")
             currentMode = "";
         } else {
-            for (let i = 0; i < 3; i++) {
-                document.querySelectorAll("button")[i].classList.remove("activeButton");
+            for (let i = 0; i < 3; i++) { // loops throug the array, which are the buttons
+                document.querySelectorAll("button")[i].classList.remove("activeButton"); // removes the active Button style so only the currently active is indicated
             }
-            currentMode = this.document.activeElement.getAttribute("id"); // gets the ID of the buttons
+            currentMode = this.document.activeElement.getAttribute("id"); 
             this.document.activeElement.classList.add("activeButton");
         }
     }
