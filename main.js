@@ -1,10 +1,15 @@
-const DEFAULT_SIZE = 16;
+const grid = document.getElementById("grid");
+const slider = document.getElementById("SliderElement");
+const ParaSlider = document.getElementById("ParaSlider");
+
+const DEFAULT_SIZE = slider.value;
 const DEFAULT_COLOR = '#000000';
 
 let size = DEFAULT_SIZE;
 currentColor = DEFAULT_COLOR;
 
-const grid = document.getElementById("grid");
+slider.oninput = resizeGrid;
+ParaSlider.innerHTML = slider.value;
 
 function createGrid() {
     grid.style.gridTemplateColumns = `repeat(${size}, 1fr)`
@@ -18,6 +23,12 @@ function createGrid() {
         })
         grid.appendChild(gridElement);
     }
+}
+
+function resizeGrid() {
+    ParaSlider.innerHTML = this.value;
+    size = this.value;
+    clearGrid();
 }
 
 function clearGrid() {
